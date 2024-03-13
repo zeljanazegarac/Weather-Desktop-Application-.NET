@@ -51,6 +51,8 @@
             this.labTemperature = new System.Windows.Forms.Label();
             this.labelAirPollution = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.labUV = new System.Windows.Forms.Label();
+            this.labelUVIndex = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +120,7 @@
             this.labWindSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labWindSpeed.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labWindSpeed.ForeColor = System.Drawing.Color.White;
-            this.labWindSpeed.Location = new System.Drawing.Point(473, 243);
+            this.labWindSpeed.Location = new System.Drawing.Point(332, 243);
             this.labWindSpeed.Name = "labWindSpeed";
             this.labWindSpeed.Size = new System.Drawing.Size(166, 33);
             this.labWindSpeed.TabIndex = 5;
@@ -130,7 +132,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(651, 243);
+            this.label1.Location = new System.Drawing.Point(510, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 33);
             this.label1.TabIndex = 6;
@@ -141,7 +143,7 @@
             this.labelWindSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labelWindSpeed.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWindSpeed.ForeColor = System.Drawing.Color.White;
-            this.labelWindSpeed.Location = new System.Drawing.Point(668, 243);
+            this.labelWindSpeed.Location = new System.Drawing.Point(527, 243);
             this.labelWindSpeed.Name = "labelWindSpeed";
             this.labelWindSpeed.Size = new System.Drawing.Size(64, 33);
             this.labelWindSpeed.TabIndex = 7;
@@ -153,7 +155,7 @@
             this.labelPressure.BackColor = System.Drawing.Color.Transparent;
             this.labelPressure.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPressure.ForeColor = System.Drawing.Color.White;
-            this.labelPressure.Location = new System.Drawing.Point(668, 294);
+            this.labelPressure.Location = new System.Drawing.Point(527, 294);
             this.labelPressure.Name = "labelPressure";
             this.labelPressure.Size = new System.Drawing.Size(64, 33);
             this.labelPressure.TabIndex = 10;
@@ -165,7 +167,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(653, 294);
+            this.label3.Location = new System.Drawing.Point(512, 294);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 33);
             this.label3.TabIndex = 9;
@@ -176,7 +178,7 @@
             this.labPressure.BackColor = System.Drawing.Color.Transparent;
             this.labPressure.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPressure.ForeColor = System.Drawing.Color.White;
-            this.labPressure.Location = new System.Drawing.Point(473, 294);
+            this.labPressure.Location = new System.Drawing.Point(332, 294);
             this.labPressure.Name = "labPressure";
             this.labPressure.Size = new System.Drawing.Size(121, 33);
             this.labPressure.TabIndex = 8;
@@ -188,7 +190,7 @@
             this.labSunset.BackColor = System.Drawing.Color.Transparent;
             this.labSunset.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labSunset.ForeColor = System.Drawing.Color.White;
-            this.labSunset.Location = new System.Drawing.Point(580, 354);
+            this.labSunset.Location = new System.Drawing.Point(439, 364);
             this.labSunset.Name = "labSunset";
             this.labSunset.Size = new System.Drawing.Size(64, 33);
             this.labSunset.TabIndex = 16;
@@ -200,7 +202,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(590, 354);
+            this.label4.Location = new System.Drawing.Point(449, 364);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 33);
             this.label4.TabIndex = 15;
@@ -211,7 +213,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(473, 354);
+            this.label5.Location = new System.Drawing.Point(332, 364);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 33);
             this.label5.TabIndex = 14;
@@ -302,9 +304,33 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(821, 243);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 33);
+            this.label2.Size = new System.Drawing.Size(95, 33);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Air Pollution:";
+            this.label2.Text = "PM2.5:";
+            // 
+            // labUV
+            // 
+            this.labUV.AutoSize = true;
+            this.labUV.BackColor = System.Drawing.Color.Transparent;
+            this.labUV.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labUV.ForeColor = System.Drawing.Color.White;
+            this.labUV.Location = new System.Drawing.Point(821, 294);
+            this.labUV.Name = "labUV";
+            this.labUV.Size = new System.Drawing.Size(132, 33);
+            this.labUV.TabIndex = 24;
+            this.labUV.Text = "UV Index:";
+            // 
+            // labelUVIndex
+            // 
+            this.labelUVIndex.AutoSize = true;
+            this.labelUVIndex.BackColor = System.Drawing.Color.Transparent;
+            this.labelUVIndex.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUVIndex.ForeColor = System.Drawing.Color.White;
+            this.labelUVIndex.Location = new System.Drawing.Point(993, 294);
+            this.labelUVIndex.Name = "labelUVIndex";
+            this.labelUVIndex.Size = new System.Drawing.Size(64, 33);
+            this.labelUVIndex.TabIndex = 25;
+            this.labelUVIndex.Text = "N/A";
             // 
             // Form1
             // 
@@ -313,6 +339,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1190, 635);
+            this.Controls.Add(this.labelUVIndex);
+            this.Controls.Add(this.labUV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelAirPollution);
             this.Controls.Add(this.labTemperature);
@@ -370,6 +398,8 @@
         private System.Windows.Forms.Label labTemperature;
         public System.Windows.Forms.Label labelAirPollution;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labUV;
+        public System.Windows.Forms.Label labelUVIndex;
     }
 }
 

@@ -68,5 +68,12 @@ namespace Weather_Desktop_Application
 
             public List[] list { get; set; }
         }
+
+        public class UVIndexInfo
+        {
+            public double value { get; set; }
+            public string unit { get; set; }
+        }
+
     }
 }

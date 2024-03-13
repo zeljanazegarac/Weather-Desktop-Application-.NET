@@ -31,6 +31,7 @@ namespace Weather_Desktop_Application
             getWeather();
             getForecast();
             getAirPollution();
+            getUVIndex();
         }
         private void TBCity_KeyDown(object sender, KeyEventArgs e)
         {
@@ -64,8 +65,8 @@ namespace Weather_Desktop_Application
                 labSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
                 labSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
 
-                labelWindSpeed.Text = Info.wind.speed.ToString();
-                labelPressure.Text = Info.main.pressure.ToString();
+                labelWindSpeed.Text = $"{Info.wind.speed} m/s ({(Info.wind.speed * 3.6):0.##} km/h)";
+                labelPressure.Text = $"{Info.main.pressure} hPa";
 
                 labTemperature.Text = $"{Math.Round(Info.main.temp)} °C";
 
@@ -119,11 +120,9 @@ namespace Weather_Desktop_Application
                     string json = web.DownloadString(url);
                     WeatherInfo.AirPollution airPollutionInfo = JsonConvert.DeserializeObject<WeatherInfo.AirPollution>(json);
 
-                    // Ovde možete koristiti podatke o zagađenju vazduha za prikaz na vašem korisničkom interfejsu
-                    // Na primer, prikazivanje PM2.5 nivoa zagađenja
                     if (airPollutionInfo.list.Length > 0)
                     {
-                        labelAirPollution.Text = $"PM2.5: {airPollutionInfo.list[0].components.pm2_5}";
+                        labelAirPollution.Text = $"{airPollutionInfo.list[0].components.pm2_5} µg/m³";
                     }
                     else
                     {
@@ -133,6 +132,27 @@ namespace Weather_Desktop_Application
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Došlo je do greške prilikom dobijanja informacija o zagađenju vazduha: {ex.Message}");
+                }
+            }
+        }
+
+
+        private void getUVIndex()
+        {
+            using (WebClient web = new WebClient())
+            {
+                string url = string.Format("https://api.openweathermap.org/data/2.5/uvi?lat={0}&lon={1}&appid={2}", lat, lon, APIKey);
+
+                try
+                {
+                    string json = web.DownloadString(url);
+                    WeatherInfo.UVIndexInfo uvIndexInfo = JsonConvert.DeserializeObject<WeatherInfo.UVIndexInfo>(json);
+
+                    labelUVIndex.Text = $"{uvIndexInfo.value} {uvIndexInfo.unit}";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Došlo je do greške prilikom dobijanja informacija o UV indeksu: {ex.Message}");
                 }
             }
         }
