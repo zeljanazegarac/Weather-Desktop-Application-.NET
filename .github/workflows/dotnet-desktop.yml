@@ -46,7 +46,8 @@ jobs:
       - name: Run the application
         run: |
               cd "C:\Users\Zeljana\Desktop\Weather Desktop Application\Weather Desktop Application\Weather Desktop Application\bin\${{ matrix.configuration }}\net6.0-windows10.0.19041.0\AppPackages"
-              .\Weather\ Desktop\ Application.exe
+              .\"Weather Desktop Application.exe"
+
 
 
       - name: Upload build artifacts
