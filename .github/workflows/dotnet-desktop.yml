@@ -37,8 +37,17 @@ jobs:
       - name: Restore the application
         run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
 
+      - name: Build the application
+        run: msbuild $env:Solution_Name /p:Configuration=$env:Configuration
+
       - name: Create the app package
         run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundle=Always
+
+      - name: Run the application
+        run: |
+              cd "C:\Users\Zeljana\Desktop\Weather Desktop Application\Weather Desktop Application\Weather Desktop Application\bin\${{ matrix.configuration }}\net6.0-windows10.0.19041.0\AppPackages"
+              .\Weather\ Desktop\ Application.exe
+
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
