@@ -7,46 +7,41 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     strategy:
       matrix:
         configuration: [Debug, Release]
-
     runs-on: windows-latest
-
     env:
       Solution_Name: Weather_Desktop_Application.sln
       Test_Project_Path: path/to/your-test-project.csproj
       Wap_Project_Directory: Weather_Desktop_Application
       Wap_Project_Path: Weather_Desktop_Application/Weather_Desktop_Application.csproj
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 6.0.x
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
 
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v2
+      - name: Setup MSBuild.exe
+        uses: microsoft/setup-msbuild@v2
 
-    - name: Execute unit tests
-      run: dotnet test $env:Test_Project_Path
+      - name: Execute unit tests
+        run: dotnet test $env:Test_Project_Path
 
-    - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      - name: Restore the application
+        run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
 
-    - name: Create the app package
-      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundle=Always /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
+      - name: Create the app package
+        run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundle=Always
 
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: App Package
-        path: ${{ env.Wap_Project_Directory }}/bin/${{ matrix.configuration }}/net6.0-windows10.0.19041.0/AppPackages
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: App Package
+          path: ${{ env.Wap_Project_Directory }}/bin/${{ matrix.configuration }}/net6.0-windows10.0.19041.0/AppPackages
