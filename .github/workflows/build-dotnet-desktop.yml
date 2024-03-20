@@ -1,0 +1,28 @@
+name: Build Weather Desktop Application
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore Weather_Desktop_Application.sln
+
+    - name: Build the application
+      run: dotnet build Weather_Desktop_Application.sln --configuration Release
