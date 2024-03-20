@@ -145,9 +145,8 @@
             this.labelWindSpeed.ForeColor = System.Drawing.Color.White;
             this.labelWindSpeed.Location = new System.Drawing.Point(527, 243);
             this.labelWindSpeed.Name = "labelWindSpeed";
-            this.labelWindSpeed.Size = new System.Drawing.Size(64, 33);
+            this.labelWindSpeed.Size = new System.Drawing.Size(0, 33);
             this.labelWindSpeed.TabIndex = 7;
-            this.labelWindSpeed.Text = "N/A";
             // 
             // labelPressure
             // 
@@ -157,9 +156,8 @@
             this.labelPressure.ForeColor = System.Drawing.Color.White;
             this.labelPressure.Location = new System.Drawing.Point(527, 294);
             this.labelPressure.Name = "labelPressure";
-            this.labelPressure.Size = new System.Drawing.Size(64, 33);
+            this.labelPressure.Size = new System.Drawing.Size(0, 33);
             this.labelPressure.TabIndex = 10;
-            this.labelPressure.Text = "N/A";
             // 
             // label3
             // 
@@ -192,9 +190,8 @@
             this.labSunset.ForeColor = System.Drawing.Color.White;
             this.labSunset.Location = new System.Drawing.Point(439, 364);
             this.labSunset.Name = "labSunset";
-            this.labSunset.Size = new System.Drawing.Size(64, 33);
+            this.labSunset.Size = new System.Drawing.Size(0, 33);
             this.labSunset.TabIndex = 16;
-            this.labSunset.Text = "N/A";
             // 
             // label4
             // 
@@ -227,9 +224,8 @@
             this.labSunrise.ForeColor = System.Drawing.Color.White;
             this.labSunrise.Location = new System.Drawing.Point(182, 364);
             this.labSunrise.Name = "labSunrise";
-            this.labSunrise.Size = new System.Drawing.Size(64, 33);
+            this.labSunrise.Size = new System.Drawing.Size(0, 33);
             this.labSunrise.TabIndex = 13;
-            this.labSunrise.Text = "N/A";
             // 
             // label7
             // 
@@ -280,9 +276,8 @@
             this.labTemperature.ForeColor = System.Drawing.Color.White;
             this.labTemperature.Location = new System.Drawing.Point(218, 162);
             this.labTemperature.Name = "labTemperature";
-            this.labTemperature.Size = new System.Drawing.Size(76, 39);
+            this.labTemperature.Size = new System.Drawing.Size(0, 39);
             this.labTemperature.TabIndex = 21;
-            this.labTemperature.Text = "N/A";
             // 
             // labelAirPollution
             // 
@@ -292,9 +287,8 @@
             this.labelAirPollution.ForeColor = System.Drawing.Color.White;
             this.labelAirPollution.Location = new System.Drawing.Point(993, 243);
             this.labelAirPollution.Name = "labelAirPollution";
-            this.labelAirPollution.Size = new System.Drawing.Size(64, 33);
+            this.labelAirPollution.Size = new System.Drawing.Size(0, 33);
             this.labelAirPollution.TabIndex = 22;
-            this.labelAirPollution.Text = "N/A";
             // 
             // label2
             // 
@@ -328,9 +322,8 @@
             this.labelUVIndex.ForeColor = System.Drawing.Color.White;
             this.labelUVIndex.Location = new System.Drawing.Point(993, 294);
             this.labelUVIndex.Name = "labelUVIndex";
-            this.labelUVIndex.Size = new System.Drawing.Size(64, 33);
+            this.labelUVIndex.Size = new System.Drawing.Size(0, 33);
             this.labelUVIndex.TabIndex = 25;
-            this.labelUVIndex.Text = "N/A";
             // 
             // Form1
             // 
